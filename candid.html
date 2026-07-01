@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>group photos — berkas.</title>
+<meta name="description" content="candid · detail crops — sit collection.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <a class="menu-pill" href="index.html#work">
+      <span class="brackets">[ ]</span>
+      <span class="label">portfolio</span>
+    </a>
+  </nav>
+
+  <main class="gallery-main">
+    <div class="proj-head reveal">
+      <div>
+        <div class="tag">[collection · 02]</div>
+        <h1>group photos</h1>
+        <div class="sub">candid collection</div>
+      </div>
+      <a class="back" href="index.html#work">← all work</a>
+    </div>
+
+    <section class="album reveal">
+      <div class="macwin">
+        <div class="macbar">
+          <div class="lights"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+          <div class="addr">berkas.com/candid</div>
+        </div>
+        <div class="album-body">
+          <div class="count" id="count"></div>
+          <div class="grid" id="grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="next-proj reveal">
+      <span class="lbl">[next collection]</span>
+      <a href="golden-hour.html">beauty shoot →</a>
+    </div>
+  </main>
+
+  <footer id="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="tag">[berkas.]</div>
+          <div class="foot-title">a quiet<br>photo studio.</div>
+        </div>
+        <div class="foot-col">
+          <div class="tag">[links]</div>
+          <a href="index.html#top">home</a>
+          <a href="index.html#work">work</a>
+          <a href="index.html#contact">contact</a>
+        </div>
+        <div class="foot-col">
+          <div class="tag">[connect]</div>
+          <a href="#">instagram</a>
+          <a href="#">github</a>
+        </div>
+      </div>
+      <div class="foot-logo">[berkas<span>.</span>]</div>
+      <div class="foot-bottom">designed &amp; built by berkas © 2026</div>
+    </div>
+  </footer>
+
+<script>
+  (function () {
+    var folder = 'candid';
+    var photos = [
+      'DSC09294', 'DSC09322', 'DSC09347', 'DSC09372', 'DSC09390',
+      'DSC09549', 'DSC09613', 'DSC09632', 'DSC09648'
+    ];
+    var grid = document.getElementById('grid');
+    var frag = document.createDocumentFragment();
+    photos.forEach(function (name, i) {
+      var shot = document.createElement('div');
+      shot.className = 'shot';
+      var frame = document.createElement('div');
+      frame.className = 'frame';
+      var img = document.createElement('img');
+      img.src = 'images/' + folder + '/' + name + '.jpg';
+      img.alt = folder + ' frame ' + (i + 1);
+      img.loading = 'lazy';
+      frame.appendChild(img);
+      shot.appendChild(frame);
+      frag.appendChild(shot);
+    });
+    grid.appendChild(frag);
+    document.getElementById('count').textContent = photos.length + ' frames';
+  })();
+</script>
+<script src="app.js"></script>
+</body>
+</html>
