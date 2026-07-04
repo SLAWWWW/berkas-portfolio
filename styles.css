@@ -139,16 +139,14 @@ h1, h2, h3, p { margin: 0; }
 .hero {
   padding: 0;
   position: relative;
-  gap: 28px;
 }
 .hero-bg { position: absolute; inset: 0; overflow: hidden; z-index: 1; pointer-events: none; }
-.hero-shot {
-  position: relative;
-  z-index: 2;
-  width: min(320px, 70vw);
-  margin-top: -6vh;
+.hero-bg .fileicon {
+  opacity: 0.18;
+  filter: blur(11px);
 }
-.hero-shot .macbody { aspect-ratio: 4 / 5; }
+.hero-bg .f5 { opacity: 0.12; }
+.hero-bg .f6 { opacity: 0.14; }
 .brand {
   position: relative;
   z-index: 2;
