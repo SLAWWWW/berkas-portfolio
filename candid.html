@@ -76,8 +76,11 @@
   (function () {
     var folder = 'candid';
     var photos = [
-      'DSC09294', 'DSC09322', 'DSC09347', 'DSC09372', 'DSC09390',
-      'DSC09549', 'DSC09613', 'DSC09632', 'DSC09648'
+      'DSC09292.jpeg', 'DSC09297.jpeg', 'DSC09323.jpeg', 'DSC09343.jpeg', 'DSC09348.jpeg',
+      'DSC09389.jpeg', 'DSC09396.jpeg', 'DSC09404.jpeg', 'DSC09423.jpeg', 'DSC09439.jpeg',
+      'DSC09445.jpeg', 'DSC09457.jpeg', 'DSC09459.jpeg', 'DSC09486.jpeg', 'DSC09548.jpeg',
+      'DSC09550.jpeg', 'DSC09551.jpeg', 'DSC09556.jpeg', 'DSC09601.jpeg', 'DSC09628.jpeg',
+      'DSC09632.jpeg', 'DSC09645.jpeg', 'DSC09648.jpeg'
     ];
     var grid = document.getElementById('grid');
     var frag = document.createDocumentFragment();
@@ -87,7 +90,7 @@
       var frame = document.createElement('div');
       frame.className = 'frame';
       var img = document.createElement('img');
-      img.src = 'images/' + folder + '/' + name + '.jpg';
+      img.src = 'images_original/' + folder + '/' + name;
       img.alt = folder + ' frame ' + (i + 1);
       img.loading = 'lazy';
       frame.appendChild(img);

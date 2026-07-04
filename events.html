@@ -76,8 +76,10 @@
   (function () {
     var folder = 'events';
     var photos = [
-      'DSC09489', 'DSC09505-2', 'DSC09580', 'DSC09682', 'DSC09699',
-      'DSC09759', 'DSC09780', 'DSC09834', 'DSC09853', 'DSC09865'
+      'jo10.jpeg', 'jo14.jpeg', 'jo16.jpeg', 'jo19.jpeg', 'jo20.jpeg',
+      'jo21.jpeg', 'jo23.jpeg', 'jo25.jpeg', 'jo27.jpeg', 'jo3.jpeg',
+      'jo30.jpeg', 'jo34.jpeg', 'jo35.jpeg', 'jo37.jpeg', 'jo39.jpeg',
+      'jo46.jpeg', 'jo5.jpeg', 'jo50.jpeg'
     ];
     var grid = document.getElementById('grid');
     var frag = document.createDocumentFragment();
@@ -87,7 +89,7 @@
       var frame = document.createElement('div');
       frame.className = 'frame';
       var img = document.createElement('img');
-      img.src = 'images/' + folder + '/' + name + '.jpg';
+      img.src = 'images_original/' + folder + '/' + name;
       img.alt = folder + ' frame ' + (i + 1);
       img.loading = 'lazy';
       frame.appendChild(img);

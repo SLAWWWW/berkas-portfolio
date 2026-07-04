@@ -76,8 +76,11 @@
   (function () {
     var folder = 'golden-hour';
     var photos = [
-      'presweet_icel-05', 'presweet_icel-14', 'presweet_icel-33', 'presweet_icel-37',
-      'presweet_icel-38', 'presweet_icel-52', 'presweet_icel-61', 'presweet_icel-65'
+      'IMG_4205.JPG', 'IMG_4206.JPG', 'IMG_4207.JPG', 'IMG_4208.JPG',
+      'IMG_4209.JPG', 'IMG_4210.JPG', 'IMG_4211.JPG', 'IMG_4212.JPG',
+      'IMG_4213.JPG', 'IMG_4214.JPG', 'IMG_4215.JPG', 'IMG_4216.JPG',
+      'IMG_4217.JPG', 'IMG_4218.JPG', 'IMG_4219.JPG', 'IMG_4220.JPG',
+      'IMG_4221.JPG', 'IMG_4222.JPG', 'jo35.jpeg'
     ];
     var grid = document.getElementById('grid');
     var frag = document.createDocumentFragment();
@@ -87,7 +90,7 @@
       var frame = document.createElement('div');
       frame.className = 'frame';
       var img = document.createElement('img');
-      img.src = 'images/' + folder + '/' + name + '.jpg';
+      img.src = 'images_original/' + folder + '/' + name;
       img.alt = folder + ' frame ' + (i + 1);
       img.loading = 'lazy';
       frame.appendChild(img);
