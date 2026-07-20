@@ -11,3 +11,4 @@ public/fonts/*.otf
 public/fonts/*.ttf
 public/fonts/*.woff
 public/fonts/*.woff2
+.vercel
