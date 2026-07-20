@@ -1,0 +1,13 @@
+# dependencies / build output
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# SF Pro is Apple-licensed — keep font binaries out of the repo.
+# Drop the real files locally; see public/fonts/README.md
+public/fonts/*.otf
+public/fonts/*.ttf
+public/fonts/*.woff
+public/fonts/*.woff2

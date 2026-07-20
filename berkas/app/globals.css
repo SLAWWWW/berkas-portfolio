@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+::selection {
+  background: theme('colors.arcane-trace');
+  color: theme('colors.pearl');
+}
+
+:focus-visible {
+  outline: 1px solid theme('colors.arcane');
+  outline-offset: 4px;
+}
+
+/* ---- Lenis smooth scroll ---- */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ---- Grain overlay (spec §3.4) ----
+   feTurbulence @ baseFrequency 0.72, desaturated — reads as
+   rgba(255,255,255,0.022) white noise under mix-blend-mode: overlay. */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.grain::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.022'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  mix-blend-mode: overlay;
+  opacity: 1;
+  animation: grain 1.6s steps(8) infinite;
+}
+
+/* transform-only — stays on the compositor */
+@keyframes grain {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  12.5%    { transform: translate3d(-2.4%, 1.6%, 0); }
+  25%      { transform: translate3d(1.8%, -2.2%, 0); }
+  37.5%    { transform: translate3d(-1.2%, -1.8%, 0); }
+  50%      { transform: translate3d(2.2%, 1.2%, 0); }
+  62.5%    { transform: translate3d(-2.0%, -0.8%, 0); }
+  75%      { transform: translate3d(1.4%, 2.0%, 0); }
+  87.5%    { transform: translate3d(-0.8%, 0.6%, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain::before {
+    animation: none;
+  }
+}
